@@ -14,3 +14,7 @@ __pycache__/
 
 # Streamlit cache
 .streamlit/
+
+data/
+*.csv
+*.parquet
