@@ -6,13 +6,12 @@
 
 
 
-\- Initial project structure
-
-\- Streamlit application created
-
-\- README added
-
-\- Downloaded example movie dataset
+* Initial project structure
+* Streamlit application created
+* README added
+* Downloaded example movie dataset
+* Added .csv reader to the application
+* Added feature to display the data types for each column
 
 
 
