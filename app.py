@@ -37,12 +37,25 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
 
     st.success("File uploaded successfully!")
-
-    st.dataframe(df)
     
-    types=detect_column_types(df)
+    st.subheader("Dataset preview ")
     
-    st.write(r"**Data types:** ")
+    st.write(df.head())
 
-    for column, dtype in types.items():
-        st.write(f"{column}: **{dtype}**")
+    #st.dataframe(df)
+    
+    st.subheader("Dataset Summary")
+
+    st.write(f"**Rows:** {df.shape[0]}")
+    st.write(f"**Columns:** {df.shape[1]}")
+
+    st.write("**Data Types** ")
+    st.dataframe(df.dtypes.rename("Type"))
+
+    
+    #types=detect_column_types(df)
+    
+    #st.write("**Data types: ** ")
+
+    #for column, dtype in types.items():
+        #st.write(f"{column}: **{dtype}**")

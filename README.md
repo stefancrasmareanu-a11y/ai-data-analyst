@@ -4,11 +4,11 @@
 
 \- \[x] Project setup
 
-\- \[ ] CSV upload
+\- \[x] CSV upload
 
-\- \[ ] Dataset preview
+\- \[x] Dataset preview
 
-\- \[ ] Data summary
+\- \[x] Data summary
 
 \- \[ ] Missing value analysis
 
