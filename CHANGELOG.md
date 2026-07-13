@@ -15,3 +15,12 @@
 
 
 
+
+
+\## v0.0.2
+
+
+
+* Implemented dataset preview (head) and summary
+* Added missing values summary
+

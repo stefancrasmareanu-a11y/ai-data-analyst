@@ -33,11 +33,7 @@ def detect_column_types(df):
 
     return column_types
 
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
-
-    st.success("File uploaded successfully!")
-    
+def preview(df):
     st.subheader("Dataset preview ")
     
     st.write(df.head())
@@ -51,7 +47,25 @@ if uploaded_file is not None:
 
     st.write("**Data Types** ")
     st.dataframe(df.dtypes.rename("Type"))
+    
+def count_blanks(df, column):
+    return [df[column].isna().sum(), (df[column] == " ").sum()]
 
+def display_blanks_summary(df):
+    for column in df.columns:
+        nans = count_blanks(df, column)[0]
+        empty_spaces = count_blanks(df, column)[1]
+        st.write("Column " + column + " has " + str(nans+empty_spaces) +
+                 " blank values ( " + str(nans )+ " NaNs, " + str(empty_spaces) + " empty cells)")
+
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+
+    st.success("File uploaded successfully!")
+    
+    preview(df)
+    
+    display_blanks_summary(df)
     
     #types=detect_column_types(df)
     
