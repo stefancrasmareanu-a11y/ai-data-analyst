@@ -16,9 +16,9 @@
 
 \- \[x] Check duplicates
 
-\- \[ ] Correlation analysis
+\- \[x] Correlation analysis
 
-\- \[ ] Interactive visualizations
+\- \[x] Interactive visualizations
 
 \- \[ ] Statistical testing
 
