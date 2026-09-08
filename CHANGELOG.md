@@ -147,3 +147,13 @@
 
 \- Automatic analytical summary
 
+
+
+\## v0.3.0 - Advanced statistical testing
+
+
+
+&#x20;- recommendation
+
+&#x20;- run test
+

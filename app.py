@@ -11,6 +11,7 @@ from src.column_analysis import *
 from src.correlation import *
 from src.scatter_plot import *
 from src.automatic_eda import *
+from src.statistics.recommendations import display_test_recommendations
 
 st.set_page_config(
     page_title="AI Data Analyst",
@@ -98,5 +99,10 @@ def main():
                 
                 automatic_eda_summary(df)
             
+        with st.expander("🧮 Statistical testing"):
+            
+            if st.toggle("Show Statistical Tests"):
+                display_test_recommendations(df)
+
 
 main()

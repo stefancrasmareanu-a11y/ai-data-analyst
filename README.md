@@ -20,7 +20,7 @@
 
 \- \[x] Interactive visualizations
 
-\- \[ ] Statistical testing
+\- \[x] Statistical testing
 
 \- \[ ] Machine learning pipeline
 
@@ -31,10 +31,6 @@
 \- \[ ] PDF report generation
 
 \- \[ ] Deployment
-
-
-
-Absolutely. Here's the roadmap we'll use throughout the project.
 
 
 
