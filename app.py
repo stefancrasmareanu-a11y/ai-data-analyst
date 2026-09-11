@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 from src.summary import *
 from src.preview import *
 from src.missing_values import *
@@ -12,6 +13,12 @@ from src.correlation import *
 from src.scatter_plot import *
 from src.automatic_eda import *
 from src.statistics.recommendations import display_test_recommendations
+from src.ai.assistant import ask_llm
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 st.set_page_config(
     page_title="AI Data Analyst",
@@ -103,6 +110,23 @@ def main():
             
             if st.toggle("Show Statistical Tests"):
                 display_test_recommendations(df)
+        
+        st.header("🤖 AI Assistant")
+
+        user_message = st.chat_input(
+            "Ask something about your dataset..."
+            )
+
+        if user_message:
+
+            with st.chat_message("user"):
+                st.write(user_message)
+
+            with st.chat_message("assistant"):
+
+                response = ask_llm(user_message,df)
+
+                st.write(response)
 
 
 main()
