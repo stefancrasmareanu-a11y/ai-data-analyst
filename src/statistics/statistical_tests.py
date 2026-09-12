@@ -4,6 +4,7 @@ from .correlations import pearson_test, spearman_test
 from .two_groups import welch_t_test, mann_whitney_test
 from .multiple_groups import anova_test, kruskal_test, tukey_test
 from .categorical_tests import chi_square_test, fisher_exact_test
+import pandas as pd
 
 
 def run_statistical_test(df, variable_1, variable_2, test_name):
@@ -24,16 +25,25 @@ def run_statistical_test(df, variable_1, variable_2, test_name):
         )
 
     elif test_name == "Welch's t-test":
-        return welch_t_test(
-            df[variable_1],
-            df[variable_2]
-        )
+        if pd.api.types.is_numeric_dtype(df[variable_1]):
+        # Pass categorical variable first, then numeric variable
+            return welch_t_test(df[variable_2], df[variable_1])
+        else:
+        # Pass categorical variable first, then numeric variable
+            return welch_t_test(df[variable_1], df[variable_2])
 
     elif test_name == "Mann-Whitney U test":
-        return mann_whitney_test(
-            df[variable_1],
-            df[variable_2]
-        )
+        if pd.api.types.is_numeric_dtype(df[variable_2]):
+        # Pass categorical variable first, then numeric variable
+            return mann_whitney_test(
+                df[variable_1],
+                df[variable_2]
+                )
+        else:
+            return mann_whitney_test(
+                df[variable_2],
+                df[variable_1]
+                )
 
     elif test_name == "One-way ANOVA":
         return anova_test(
